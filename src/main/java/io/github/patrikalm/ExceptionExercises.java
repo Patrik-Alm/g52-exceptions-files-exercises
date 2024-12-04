@@ -9,7 +9,7 @@ public class ExceptionExercises {
     public static void main(String[] args) {
 
 
-        ex2();
+        ex3();
 
 
     }
@@ -71,8 +71,15 @@ public class ExceptionExercises {
 
     public static void ex3() {
 
+    BankAccount account1 = new BankAccount(500);
 
-
+    try {
+        account1.withdraw(600);
+        System.out.println("Your withdrawal was successful");
+    }
+    catch(InsufficientBalanceException e) {
+        System.out.println("You can not withdraw that amount. You are missing £ " + e.getAmount());
+    }
 
 
     }
