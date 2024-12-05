@@ -1,5 +1,12 @@
 package io.github.patrikalm;
 
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.NoSuchFileException;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.sql.SQLOutput;
 import java.util.InputMismatchException;
 import java.util.Scanner;
@@ -83,4 +90,21 @@ public class ExceptionExercises {
 
 
     }
+
+    public static void ex4() {
+
+        Path relativePath = Paths.get("g52-exceptions-files-exercises/folder/TextFile.txt");
+
+        try {
+            BufferedReader bufferedReader = Files.newBufferedReader(relativePath);
+        } catch (NumberFormatException e1) {
+            System.out.println("Numbers has wrong format, " + e1);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+    }
+
+
+
 }
