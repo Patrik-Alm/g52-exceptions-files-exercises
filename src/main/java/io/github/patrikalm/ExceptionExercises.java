@@ -16,7 +16,7 @@ public class ExceptionExercises {
     public static void main(String[] args) {
 
 
-        ex3();
+        ex5();
 
 
     }
@@ -101,6 +101,44 @@ public class ExceptionExercises {
             System.out.println("Numbers has wrong format, " + e1);
         } catch (IOException e) {
             e.printStackTrace();
+        }
+
+    }
+
+    public static void ex5() {
+
+        int firstNumber;
+        int secondNumber;
+        int divisionResult;
+
+        Scanner scanner = new Scanner(System.in);
+
+        while (true) {
+
+            System.out.println();
+            System.out.print("Enter a number: ");
+            firstNumber = scanner.nextInt();
+            if (firstNumber == 0) {
+                break;
+            }
+
+            System.out.println();
+            System.out.print("Enter a second number: ");
+            secondNumber = scanner.nextInt();
+
+            try {
+                divisionResult = firstNumber / secondNumber;
+                System.out.println();
+                System.out.print("The result is ");
+                System.out.println(divisionResult);
+            } catch (ArithmeticException e) {
+
+                System.out.println("You can not enter that number as it throws exception " + e);
+            }
+            finally {
+                System.out.println();
+                System.out.println("Try again? To exit enter 0");
+            }
         }
 
     }
